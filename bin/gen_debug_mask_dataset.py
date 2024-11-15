@@ -39,15 +39,15 @@ def main(args):
 
     config = load_yaml(args.config)
 
-    in_files = list(glob.glob(os.path.join(args.indir, '**', f'*{config.img_ext}'), recursive=True))
+    in_files = list(glob.glob(os.path.join(args.indir, '**', f'*{args.ext}'), recursive=True))
     for infile in tqdm.tqdm(in_files):
         outimg = args.outdir + infile[len(args.indir):]
-        outmask_pattern = outimg[:-len(config.img_ext)] + '_mask{:04d}.png'
+        outmask_pattern = outimg[:-len(args.ext)] + '_mask{:04d}.png'
 
         os.makedirs(os.path.dirname(outimg), exist_ok=True)
         shutil.copy2(infile, outimg)
 
-        generate_masks_for_img(infile, outmask_pattern, **config.gen_kwargs)
+        generate_masks_for_img(infile, outmask_pattern, mask_size=200, step=0.5)
 
 
 if __name__ == '__main__':
@@ -57,5 +57,7 @@ if __name__ == '__main__':
     aparser.add_argument('config', type=str, help='Path to config for dataset generation')
     aparser.add_argument('indir', type=str, help='Path to folder with images')
     aparser.add_argument('outdir', type=str, help='Path to folder to store aligned images and masks to')
+    aparser.add_argument('--ext', type=str, default='png', help='Input image extension')
+
 
     main(aparser.parse_args())

@@ -3,13 +3,13 @@ generator_kind: random
 mask_generator_kwargs:
   irregular_proba: 1
   irregular_kwargs:
-    min_times: 4
-    max_times: 10
-    max_width: 100
-    max_angle: 4
-    max_len: 200
+    min_times: 1
+    max_times: 1
+    max_width: 50
+    max_angle: 1
+    max_len: 1
 
-  box_proba: 0.3
+  box_proba: 0
   box_kwargs:
     margin: 0
     bbox_min_size: 30
@@ -20,7 +20,7 @@ mask_generator_kwargs:
   segm_proba: 0
   squares_proba: 0
 
-  variants_n: 5
+  variants_n: 1
 
 max_masks_per_image: 1
 

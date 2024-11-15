@@ -1,0 +1,4 @@
+# @package _group_
+data_root_dir: /home/xuzhao/ws/data/lama/trainingset/cloth6k
+out_root_dir: /home/xuzhao/ws/data/lama/checkpoint
+tb_dir: /home/xuzhao/ws/data/lama/logs
