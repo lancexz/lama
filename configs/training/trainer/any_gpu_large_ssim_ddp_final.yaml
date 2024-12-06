@@ -5,7 +5,7 @@ kwargs:
   max_epochs: 1000
   gradient_clip_val: 1
   log_gpu_memory: None  # set to min_max or all for debug
-  limit_train_batches: 2000 # <- was 25000
+  limit_train_batches: 1000 # <- was 25000
   val_check_interval: ${trainer.kwargs.limit_train_batches}
   # fast_dev_run: True  # uncomment for faster debug
   # track_grad_norm: 2  # uncomment to track L2 gradients norm
@@ -14,7 +14,7 @@ kwargs:
 #  precision: 16
 #  amp_backend: native
 #  amp_level: O1
-  # resume_from_checkpoint: path  # override via command line trainer.resume_from_checkpoint=path_to_checkpoint
+  resume_from_checkpoint: /home/user/ws/data/lama/checkpoint/user_2024-11-22_16-34-46_train_lama-fourier_/models/last.ckpt  # override via command line trainer.resume_from_checkpoint=path_to_checkpoint
   terminate_on_nan: False
   # auto_scale_batch_size: True  # uncomment to find largest batch size
   check_val_every_n_epoch: 1

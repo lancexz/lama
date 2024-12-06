@@ -2,6 +2,31 @@
 outputs/
 *.pth
 *.zip
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.heic
+*.JPG
+*.JPEG
+*.PNG
+*.BMP
+*.TIF
+*.TIFF
+*.HEIC
+*.mp4
+*.mov
+*.MOV
+*.avi
+*.data
+*.json
+*.cfg
+*.npy
+*.csv
+./__pycache__
+*.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
